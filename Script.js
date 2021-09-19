@@ -1,4 +1,14 @@
-const fileurl = 'URL TO MIDI HERE'
+//CONFIG
+
+//the url of the midi file, the site that hosts this file MUST have cors enabled!
+const fileurl = 'FileDownloadUrlHere'
+
+
+//the track of the midi file to play. only one track can be played currently.
+
+const midiTrack = 1
+
+//END OF CONFIG
 !function(t) {
     function e(n) {
         if (i[n])
@@ -11282,6 +11292,47 @@ const fileurl = 'URL TO MIDI HERE'
                 }).then(function(e) {
                     return e.id = t.getName(),
                     t.loadMidi(fileurl).then(function(t) {
+//Edited By Togi
+                        function myFunc() {
+                          console.log('these warnings dont matter')
+                          console.log('Loaded')
+                          var fileinfo = new URL(`${fileurl}`)
+                          var path = fileinfo.pathname
+                          var hostName = fileinfo.hostname
+                          var filename = path.split(/\//).pop();
+                          var togiurl = 'https://tog1.me'
+                          var elementExists = document.getElementById("skip")
+                          if (elementExists) {document.getElementById("skip").remove()}
+                          var elementExists1 = document.getElementById("link")
+                            if (elementExists1) {document.getElementById("link").remove()}
+
+                          
+                          document.getElementById("skipContainer").remove();
+                          document.getElementById("dateLocation").remove();
+                          if (filename) {
+                            document.getElementById("dateLocation").innerHTML = `File, "<a href="${'https://'+hostName+'/'+filename}">${filename}<a>" From, "<a href="${'https://'+hostName}">${hostName}<a>"`
+                          } else {document.getElementById("dateLocation").innerHTML = `File, "Data Unavailable" From, "<a href="${'https://'+hostName}">${hostName}<a>"`}
+                          document.getElementById("instructions").innerHTML = "Custom Midi Script Provided By Togi! <small>https://tog1.me<small>"
+                          document.getElementById("instructions").classList.remove("disappearable");
+                          colorLinks("#0EEADC");
+
+function colorLinks(hex)
+{
+    var links = document.getElementsByTagName("a");
+    for(var i=0;i<links.length;i++)
+    {
+        if(links[i].href)
+        {
+
+            links[i].style.color = hex;  
+        }
+    }  
+}
+                          }
+                          
+                          setTimeout(myFunc, 400);
+
+                       
                         return e.events = t,
                         e
                     })
@@ -11305,7 +11356,20 @@ const fileurl = 'URL TO MIDI HERE'
                         return t.arrayBuffer();
                     throw new Error(t.status)
                 }).then(function(t) {
-                    return y.default.parseMidi(new Uint8Array(t)).tracks[1]
+                     //Edited By Togi
+                    function myFunc() {
+                        document.getElementById("skip").remove();
+                        document.getElementById("dateLocation").textContent = ''
+                        document.getElementById("duration").remove();
+                        document.getElementById("link").remove();
+                        }
+                        
+                        setTimeout(myFunc, 50);
+console.log('Loading Custom Midi on Track '+midiTrack)
+    return y.default.parseMidi(new Uint8Array(t)).tracks[midiTrack]
+
+
+                    
                 })
             }
         }, {
@@ -20771,4 +20835,5 @@ const fileurl = 'URL TO MIDI HERE'
     t.exports = "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojNDViNWExO308L3N0eWxlPjwvZGVmcz48dGl0bGU+MTcxMDA1X2RvdF9waWFub19pY29uc19leHBvcnQ8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTY0MC4zLDYzNi45Mkg1OTQuNTFWMzYyLjE5SDY0MC4zWk0zNjUuNTYsMzYyLjE5VjYzNi45MmwxOTQuNi0xMzcuMzdaIi8+PC9zdmc+"
 }
 ]);
-//# sourceMappingURL=Browser.js.map
+
+//Script Edited By Togi, in association with TMG Inc. https://Togar.media
