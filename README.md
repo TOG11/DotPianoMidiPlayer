@@ -55,7 +55,7 @@ const midiTrack = 1
   **IF YOU GET A "forEach" ERROR PLEASE RELOAD THE  PAGE AND TRY AGAIN! <br> (im not sure what the culprit of this error is, but i think it has somthing to do with the midi being over 2mins.**
 
   <br> <br> <br>
-  **I am in no way affiliated with https://dotpiano.com, all rights to them for the amazing website!**
+  **I am in no way affiliated with https://dotpiano.com, all rights to https://github.com/tambien for the amazing website!**
   <br>
   <br>
 Script Created in Affiliation With TMG Inc. https://togar.media                         
