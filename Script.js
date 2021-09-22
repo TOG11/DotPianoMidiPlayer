@@ -5,7 +5,7 @@ const fileurl = 'https://togi.cloud.ngrok.io/data/uploads/users/?img=Dotpiano/me
 
 //control midi file tempo (for most songs you want 60, however the ussual change is somtimes required) 
 //!!THIS IS NOT BPM, LOWER IS SLOWER, HIGHER IS FASTER!!
-const tempo = 40
+const tempo = 60
 
 //the track of the midi file to play. only one track can be played currently.
 
