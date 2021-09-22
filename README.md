@@ -1,7 +1,7 @@
 # Dot Piano Midi Player
 A script that allows you to play custom .mid files through https://dotpiano.com
 
-### Download <a href="https://github.com/TOG11/DotPianoMidiPlayer/releases/tag/Script">script.js<a> in releases
+### Download <a href="https://github.com/TOG11/DotPianoMidiPlayer/releases/tag/V3.0.0">script.js<a> in releases
 
 # Getting The Midi File To Play & How The Midi Tracks Work
 find a midi file with **ONE TRACK ONLY** If the midi file has more than **1** **track** in it, the script will auto set to play track 1. <br>
@@ -11,6 +11,12 @@ if you would like to switch the midi tracks the script plays on, then at the top
 const midiTrack = 1 //<-CHANGE THIS NUMBER TO THE TRACK NUMBER YOU WANT TO PLAY 
 ```
 most of the time you want track 1, however for advanced users i added this setting to the script.
+<br> in V3 we added the ability to change midi tempos, to do this go into your config at the top of Script.js and look foor,
+ ```node
+ const tempo = 60
+ ``` 
+ <br> here change the tempo. higher is faster, lower is slower. 60 is base.
+                            
 
 # Upload Midi Files To Server                                
  After you have found your midi file, we need to upload it to a File Server with CORS enabled.
@@ -26,11 +32,14 @@ After your files have been uploaded, copy the link to the .mid file download, go
   
   Your config should look somthing like this afterwards, 
   ```node
-  //CONFIG
+//CONFIG
 
 //the url of the midi file, the site that hosts this file MUST have cors enabled!
 const fileurl = 'https://togi.cloud.ngrok.io/data/uploads/users/?img=Dotpiano/media/example.mid'
 
+//control midi file tempo (for most songs you want 60, however the ussual change is somtimes required) 
+//!!THIS IS NOT BPM, LOWER IS SLOWER, HIGHER IS FASTER!!
+const tempo = 60
 
 //the track of the midi file to play. only one track can be played currently.
 
