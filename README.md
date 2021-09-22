@@ -10,8 +10,8 @@ if you would like to switch the midi tracks the script plays on, then at the top
 ```node 
 const midiTrack = 1 //<-CHANGE THIS NUMBER TO THE TRACK NUMBER YOU WANT TO PLAY 
 ```
-most of the time you want track 1, however for advanced users i added this setting to the script.
-<br> in V3 we added the ability to change midi tempos, to do this go into your config at the top of Script.js and look foor,
+most of the time you want track 1, however for advanced users i added this setting to the script. <br>
+<br> in V3 we added the ability to change midi tempos, to do this go into your config at the top of Script.js and look for,
  ```node
  const tempo = 60
  ``` 
