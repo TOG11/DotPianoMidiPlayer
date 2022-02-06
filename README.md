@@ -19,11 +19,27 @@ most of the time you want track 1, however for advanced users i added this setti
                             
 
 # Upload Midi Files To Server                                
- After you have found your midi file, we need to upload it to a File Server with CORS enabled.
+ After you have found your midi file, we need to upload it to a File Server/API with CORS enabled.
                                <br><br>
-Now heres where things **WOULD** get tricky, however luckily for you, i host my own Public File Server W/ CORS Enabled on it.
-### https://tog1.cloud is where you can access it from.                               
-simply create a one-click account and upload your midi file.
+Now heres where things **WOULD** get tricky, however luckily for you, i host my own Storage API W/ CORS Enabled on it. Simply make an account and uset he following code to upload a file.<br>
+ ```node
+ const request = require('request');
+const fs = require('fs')
+
+var url = 'https://togi-cloud.ngrok.io/tdcn/api/v1/upload?key=YOUR_API_KEY'
+
+var options = {
+ // the file to upload
+    file: fs.createReadStream(__dirname + "/1.mid")
+}
+
+  request.post({url: url, formData: options}, function (err, body) {
+    if (err) throw err
+console.log(body.body)
+  });
+ ```
+### https://togi-cloud.ngrok.io/tdcn/account is where you can access it from.                               
+simply create an account and upload your midi file.
 <br>
 After your files have been uploaded, copy the link to the .mid file download, go to the config for script.js (at the top of script.js) and paste it here,
  ```node
@@ -35,7 +51,7 @@ After your files have been uploaded, copy the link to the .mid file download, go
 //CONFIG
 
 //the url of the midi file, the site that hosts this file MUST have cors enabled!
-const fileurl = 'https://togi.cloud.ngrok.io/data/uploads/users/?img=Dotpiano/media/example.mid'
+const fileurl = 'FILE URL HERE'
 
 //control midi file tempo (for most songs you want 60, however the ussual change is somtimes required) 
 //!!THIS IS NOT BPM, LOWER IS SLOWER, HIGHER IS FASTER!!
