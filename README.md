@@ -30,7 +30,7 @@ var url = 'https://togi-cloud.ngrok.io/tdcn/api/v1/upload?key=YOUR_API_KEY'
 
 var options = {
  // the file to upload
-    file: fs.createReadStream(__dirname + "/1.mid")
+    file: fs.createReadStream(__dirname + "/YOUR_MIDI.mid")
 }
 
   request.post({url: url, formData: options}, function (err, body) {
@@ -41,7 +41,9 @@ console.log(body.body)
 ### https://togi-cloud.ngrok.io/tdcn/account is where you can access it from.                               
 simply create an account and upload your midi file.
 <br>
-After your files have been uploaded, copy the link to the .mid file download, go to the config for script.js (at the top of script.js) and paste it here,
+After your file has been uploaded, scroll down the TDCN dashboard, and run a file scan. <br> 
+ then copy the midi files name you want to play (YOUR_MIDI.mid) and paste it into Search For Files, <br> then, copy the download link, and put into as the fileurl var in the main script.<br>
+ go to the config for script.js (at the top of script.js) and paste it here,
  ```node
   const fileurl = 'DownloadLinkGoesHere'
   ```
