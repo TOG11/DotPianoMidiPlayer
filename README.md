@@ -15,7 +15,7 @@ most of the time you want track 1, however for advanced users i added this setti
  ```node
  const tempo = 60
  ``` 
- <br> here change the tempo. higher is faster, lower is slower. 60 is base.
+ <br> here change the tempo. higher is faster, lower is slower. 60 is base, about 120 BPM.
                             
 
 # Upload Midi Files To Server                                
