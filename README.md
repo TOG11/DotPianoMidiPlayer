@@ -20,30 +20,7 @@ most of the time you want track 1, however for advanced users i added this setti
 
 # Upload Midi Files To Server                                
  After you have found your midi file, we need to upload it to a File Server/API with CORS enabled.
-                               <br><br>
-Now heres where things **WOULD** get tricky, however i host my own temporary Storage API W/ CORS Enabled on it. Simply make an account and use the following code to upload a file to your account.<br><br><h3><b>(please note this is under ngrok, which is a devlopment URL, DO NOT, EVER, use this storage API for important files, TDCN is only running because of this script exisitng, and people needing to store storage, that can be used with CORS on other websites. So again, this site is DEPRECATED! do not use it for important stuff or files! JUST MIDI'S!)</h3></b><br>
-<br><h2><b>ONLY USE TDCN API IF YOU MUST.</b></h2>
- ```node
- const request = require('request');
-const fs = require('fs')
-
-var url = 'https://togi-cloud.ngrok.io/tdcn/api/v1/upload?key=YOUR_API_KEY'
-
-var options = {
- // the file to upload
-    file: fs.createReadStream(__dirname + "/YOUR_MIDI.mid")
-}
-
-  request.post({url: url, formData: options}, function (err, body) {
-    if (err) throw err
-console.log(body.body)
-  });
- ```
-### https://togi-cloud.ngrok.io/tdcn/account is where you can access it from.                               
-create an account and upload your midi file.
-<br>
-After your file has been uploaded, scroll down the TDCN dashboard, and run a file scan. <br> 
- then copy the midi files name you want to play (YOUR_MIDI.mid) and paste it into Search For Files, <br> then, copy the download link, and put into as the fileurl var in the main script.<br>
+ Copy the download link, and put into as the fileurl var in the main script.<br>
  go to the config for script.js (at the top of script.js) and paste it here,
  ```node
   const fileurl = 'DownloadLinkGoesHere'
