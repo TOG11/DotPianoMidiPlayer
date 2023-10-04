@@ -1,9 +1,3 @@
-## ANNOUNCEMENT:<br>
-Although this project hasnt been touched in ahwile, ive decided to resume development on it (and on dp2mid.xyz),<br>
-I plan to make it easier for people to use this script, by creating a web extension for chromium-based web browsers.<br>
-I will start development on this mini web application soon, expecting its finish to be around the end of febuary.<br><br>
-## Happy New Year! 2023 Will be a good one! (hopefully)
-
 # Dot Piano Midi Player
 A script that allows you to play custom .mid files through https://dotpiano.com
 
