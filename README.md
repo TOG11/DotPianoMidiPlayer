@@ -62,5 +62,4 @@ const midiTrack = 1
   <br> <br> <br>
   **I am in no way affiliated with https://dotpiano.com, all rights to https://github.com/tambien for the amazing website!**
   <br>
-  <br>
-Script Created in Affiliation With TMG Inc. https://togar.media                         
+  <br>                  
