@@ -1,3 +1,7 @@
+# This script is NOT maintained!
+# As of Feb 2024 it still works, however bugs will NOT be fixed.
+
+
 # Dot Piano Midi Player
 A script that allows you to play custom .mid files through https://dotpiano.com
 
